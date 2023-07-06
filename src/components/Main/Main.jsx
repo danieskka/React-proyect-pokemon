@@ -1,15 +1,17 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Search from '../Search/Search';
-import ListaPokemon from '../ListaPokemon/ListaPokemon';
+import Home from './Home/Home';
+import Pokedex from './Pokedex/Pokedex';
 
 const Main = () => {
-  return <main>
+  return (
+  <main>
     <Routes>
-      <Route path="/" element={<ListaPokemon/>}/>
-      <Route path="/search" element={<Search/>}/>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/search" element={<Pokedex/>}/>
     </Routes>
   </main>
+  )
 };
 
 export default Main;
