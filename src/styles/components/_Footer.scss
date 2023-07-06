@@ -1,0 +1,12 @@
+@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
+
+.footer {
+    background-color: $orange;
+    height: 60px;
+    width: 100%;
+    padding: 10px;
+    color: black;
+    font-size: 16px;
+    text-align: center;
+  }

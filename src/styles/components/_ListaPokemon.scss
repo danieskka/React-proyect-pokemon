@@ -1,0 +1,18 @@
+.lista-container {
+    text-align: center;
+    padding: 20px;
+}
+  
+.lista-title {
+    font-size: 44px;
+    margin-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: goldenrod;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}

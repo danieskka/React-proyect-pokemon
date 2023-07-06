@@ -1,0 +1,30 @@
+@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    // background-color: #f1c40f; // Color de fondo amarillo
+}
+
+.navbar-list {
+    display: flex;
+    list-style: none; // Oculta los puntos de la lista
+}
+
+.navbar-item {
+    margin: 0 20px;
+}
+
+.navbar-item a {
+    color: #fff; // Color del texto en blanco
+    font-size: 28px; // Tamaño de fuente más amplio
+    font-weight: bold; // Fuente en negrita
+    text-decoration: none; // Elimina subrayado del enlace
+    transition: color 0.3s ease-in-out; // Transición de color suave al pasar el ratón
+}
+
+.navbar-item a:hover {
+    color: #fbff00; // Cambia el color del texto al pasar el ratón
+}
+  

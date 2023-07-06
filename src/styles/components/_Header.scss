@@ -1,0 +1,12 @@
+@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
+
+header {
+    background-color: $orange;
+    height: 60px;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}

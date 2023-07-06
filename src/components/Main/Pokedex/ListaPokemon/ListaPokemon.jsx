@@ -1,17 +1,22 @@
 import Card from './Card';
 
-const ListaPokemon = ({ pokemonData }) => {
+const ListaPokemon = ({ pokeList }) => {
   return (
-    <div>
-      <h2>Lista de Pokemon</h2>
-      {pokemonData && pokemonData.sprites && (  
+    <section className="lista-container">
+      <h2 className="lista-title">Lista de Pokemon</h2>
+      <div className="cards-container">
+      {pokeList.map((pokemon, index) => (
         <Card
-          name={pokemonData.name}
-          image={pokemonData.sprites.other.home.front_default}
-          // Otros datos que deseas pasar a la Card
+          key={index}
+          name={pokemon.name}
+          image={pokemon.img}
+          height={pokemon.height}
+          types={pokemon.types}
+          weight={pokemon.weight}
         />
-      )}  
-    </div>
+      ))}
+      </div>
+    </section>
   );
 };
 
