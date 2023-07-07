@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+import { Circle, Heart } from 'react-spinners-css';
+
 import ListaPokemon from "./ListaPokemon/ListaPokemon";
 import Search from "./Search/Search";
 
 const Pokedex = () => {
   const [pokemonName, setPokemonName] = useState("");
-  // const [pokemonData, setPokemonData] = useState(null);
   const [pokeList, setPokeList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -14,45 +15,52 @@ const Pokedex = () => {
     setPokemonName(pokeName);
   };
 
-useEffect(() => {
-  const fetchData = async () => {
-    
-    if (pokemonName) {
-      try {
-        setIsLoading(true);
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}/`);
-        const data = response.data;
-        // setPokemonData(data);
+  useEffect(() => {
+    const fetchData = async () => {
+      if (pokemonName) {
+        try {
+          setIsLoading(true);
 
-        const name = data.name;
-        const img = data.sprites.other.home.front_default;
-        const height = data.height;
-        const types = data.types ? data.types.map((type) => type.type.name).join(", ") : "";
-        const weight = data.weight;
-        const addNewPokemon = { name, img, height, types, weight };
-        
-        setPokeList([...pokeList, addNewPokemon]);
+          // Simulación de tiempo de espera con setTimeout
+          setTimeout(async () => {
+            const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}/`);
+            const data = response.data;
 
-      } catch (error) {
-        console.log("Error:", error);
-      } finally {
-        setIsLoading(false);
+            const name = data.name;
+            const img = data.sprites.other.home.front_default;
+            const height = data.height;
+            const types = data.types ? data.types.map((type) => type.type.name) : [];
+            const weight = data.weight;
+            const addNewPokemon = { name, img, height, types, weight };
+
+            setPokeList([...pokeList, addNewPokemon]);
+            setIsLoading(false);
+          }, 1000); // 3 segundos de tiempo de espera
+        } catch (error) {
+          console.log("Error:", error);
+        }
       }
-    }
-  };
+    };
 
-  fetchData();
-}, [pokemonName]);
+    fetchData();
+  }, [pokemonName]);
 
-return (
-  <section>
-    <Search handlePokemon={handlePokemon} />
-    {isLoading ? <p>Loading...</p> : <ListaPokemon pokeList={pokeList} />}
-  </section>
-);
+  return (
+    <section>
+      <Search handlePokemon={handlePokemon} />
+      {isLoading ? (
+        <div>
+          <Circle color="orange" size={100}/>
+        </div>
+      ) : (
+        <ListaPokemon pokeList={pokeList} />
+      )}
+    </section>
+  );
 };
 
 export default Pokedex;
+
 
 
 // import { useEffect, useState } from "react";
