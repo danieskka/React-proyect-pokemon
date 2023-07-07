@@ -14,9 +14,11 @@ const handleSubmit = (e) => {
 };
 
 const handleChange = (e) => {
-    setPokeName(e.target.value)
-
+  const inputValue = e.target.value;
+  setPokeName(inputValue);
+  handlePokemon(inputValue);
 };
+
   
 return (
   <article className="search-container">
