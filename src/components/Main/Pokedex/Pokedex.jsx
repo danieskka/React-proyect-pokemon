@@ -9,7 +9,7 @@ import useDebounce from "../../../hooks/useDebounce";
 const Pokedex = () => {
   const [pokemonName, setPokemonName] = useState("");
   const [pokeList, setPokeList] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
 
   const debouncedPokemonName = useDebounce(pokemonName, 2500);
 
@@ -17,7 +17,7 @@ const Pokedex = () => {
     const fetchData = async () => {
       if (debouncedPokemonName && !pokeList.find((pokemon) => pokemon.name === debouncedPokemonName)) {
         try {
-          setIsLoading(true);
+          setIsSearching(true);
 
           const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${debouncedPokemonName}/`);
           const data = response.data;
@@ -30,9 +30,10 @@ const Pokedex = () => {
           const addNewPokemon = { name, img, height, types, weight };
 
           setPokeList([...pokeList, addNewPokemon]);
-          setIsLoading(false);
+          setIsSearching(false);
         } catch (error) {
           console.log("Error:", error);
+          setIsSearching(false);
         }
       }
     };
@@ -49,18 +50,15 @@ const Pokedex = () => {
   return (
     <section>
       <Search handlePokemon={handlePokemon} />
-      {isLoading ? (
+      {isSearching ? (
         <div>
           <Circle color="orange" size={100} />
         </div>
-      ) : (
-        <ListaPokemon pokeList={pokeList} />
-      )}
+      ) : ( <ListaPokemon pokeList={pokeList} />
+      
+)}
     </section>
   );
 };
 
 export default Pokedex;
-
-
-

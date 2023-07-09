@@ -9,7 +9,6 @@ const handleSubmit = (e) => {
   if (pokeName.trim() !== "") { // comprobar que no esta vacio el campo del nombre
     handlePokemon(pokeName);
     setPokeName('');
-    
   }
 };
 

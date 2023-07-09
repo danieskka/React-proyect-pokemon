@@ -11,6 +11,9 @@ const NavBar = () => {
         <li className="navbar-item">
           <Link to="/search">Search Pokemons</Link>
         </li>
+        <li className="navbar-item">
+          <Link to="/new">Sign Up Pokemons</Link>
+        </li>
       </ul>
     </nav>
   );
