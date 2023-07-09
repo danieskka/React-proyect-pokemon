@@ -14,6 +14,12 @@ const Details = () => {
   const typeOne = params.get('typeOne');
   const typeTwo = params.get('typeTwo');
 
+  // Conversión de peso de libras a kilogramos
+  const weightKg = Math.round(weight * 0.45359237 * 100) / 100;
+
+  // Conversión de altura de pies a metros
+  const heightMt = Math.round(height * 0.3048 * 100) / 100;
+
   return (
     <article className="card">
       <div className="card-image-container">
@@ -21,12 +27,10 @@ const Details = () => {
       </div>
       <h3 className="card-title">{name}</h3>
       <p>ID: {id}</p>
-      <p>Weight: {weight}</p>
-      <p>Height: {height}</p>
+      <p>Weight: {weightKg} Kg</p>
+      <p>Height: {heightMt} Meters</p>
       <p>TypeOne: {typeOne}</p>
       {typeTwo && <p>TypeTwo: {typeTwo}</p>}
-      {/* Mostrar información adicional */}
-      {/* ... */}
     </article>
   );
 };
