@@ -71,7 +71,7 @@ const Form = () => {
             <option value="fairy">Fairy</option>
             <option value="dark">Dark</option>
           </select>
-          {errors.typeOne && <p>Please select a type for Type One.</p>}
+          {errors.types && <p>Please select a type for Type One.</p>}
         </article>
 
         <article className="form-group">
