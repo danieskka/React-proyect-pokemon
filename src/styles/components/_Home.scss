@@ -34,11 +34,11 @@ main {
   
 .gif {
     width: 450px;
-    height: 300px; /* Ajusta la altura según tus necesidades */
+    height: 300px;
     border-color: #f1c40f;
     border-width: 4px;
     border-radius: 10px;
     margin: 0.1rem;
-    object-fit: cover; /* La imagen se ajustará manteniendo su relación de aspecto y llenará completamente el contenedor */
+    object-fit: cover;
 }
   

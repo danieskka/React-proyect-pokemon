@@ -1,16 +1,34 @@
-import React from "react";
 import { useForm } from 'react-hook-form';
+import { useState } from "react";
+
+import FormCard from './FormCard/FormCard';
 
 const Form = () => {
+
+  const [pokemonData, setPokemonData] = useState(null);
+  const [showCard, setShowCard] = useState(false);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
+  const onSubmit = (data) => {
+    const pokemon = {
+      name: data.name,
+      image: data.image,
+      id: data.id,
+      types: data.types,
+    };
+    setPokemonData(pokemon);
+    setShowCard(true);
+  };
+
   return (
     <section className="form-container">
-      <form onSubmit={handleSubmit((data) => console.log(data))}>
+      
+      <form onSubmit={handleSubmit(onSubmit)}>
       <h3>Introduce a Pokemon</h3>
         <article className="form-group">
           <label>Pokemon ID:</label>
@@ -32,7 +50,7 @@ const Form = () => {
 
         <article className="form-group">
           <label>Type One:</label>
-          <select {...register('typeOne', { required: true })}>
+          <select {...register('types[0]', { required: true })}>
             <option value="">Select a type</option>
             <option value="electric">Electric</option>
             <option value="fire">Fire</option>
@@ -58,7 +76,7 @@ const Form = () => {
 
         <article className="form-group">
           <label>Type Two:</label>
-          <select {...register('typeTwo')}>
+          <select {...register('types[1]')}>
           <option value="">Select a type</option>
             <option value="electric">Electric</option>
             <option value="fire">Fire</option>
@@ -83,6 +101,12 @@ const Form = () => {
 
         <input type="submit" value="Submit" />
       </form>
+      {showCard && (
+      <div className="form-card-container">
+      <FormCard name={pokemonData.name} image={pokemonData.image} id={pokemonData.id} types={pokemonData.types} />
+      </div>
+)}
+
     </section>
   );
 }

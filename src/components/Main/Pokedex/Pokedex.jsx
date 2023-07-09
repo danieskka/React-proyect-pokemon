@@ -1,15 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Circle } from 'react-spinners-css';
+import { PokeListContext } from "../../../context/pokeListContext";
 
 import ListaPokemon from "./ListaPokemon/ListaPokemon";
 import Search from "./Search/Search";
 import useDebounce from "../../../hooks/useDebounce";
 
 const Pokedex = () => {
+
+  const { pokeList, setPokeList } = useContext(PokeListContext);
+
   const [pokemonName, setPokemonName] = useState("");
-  const [pokeList, setPokeList] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
+
+  const handlePokemon = (pokeName) => {
+    setPokemonName(pokeName);
+  };
 
   const debouncedPokemonName = useDebounce(pokemonName, 2500);
 
@@ -41,11 +48,7 @@ const Pokedex = () => {
     if (debouncedPokemonName.trim() !== "") {
       fetchData();
     }
-  }, [debouncedPokemonName, pokeList]);
-
-  const handlePokemon = (pokeName) => {
-    setPokemonName(pokeName);
-  };
+  }, [debouncedPokemonName, pokeList, setPokeList]);
 
   return (
     <section>
