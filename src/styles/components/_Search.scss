@@ -5,13 +5,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
   position: sticky;
   top: 28px;
-  background-color: #ffffff;
   z-index: 999;
 }
 
+.search-form {
+  margin-top: 20px;
+}
 
 .search-input {
   padding: 15px;

@@ -3,12 +3,23 @@ import React from "react";
 const Home = () => {
   return (
     <>
-      <h1>Bienvenidos al mundo Pokemon</h1>
-      <div className="home-container">
-        <div className="gif-container">
+      <h1>Welcome to the Pokemon World!</h1>
+
+      <article className="home-container">
+
+        <section className="gif-container">
           <img className="gif" src="https://i.gifer.com/V5NL.gif" alt="Pikachu_GIF" />
-        </div>
-      </div>
+        </section>
+
+        <section className="gif-container">
+        <img className="gif" src="https://i.gifer.com/JTIA.gif" alt="Eevee_GIF" />
+        </section>
+
+        <section className="gif-container">
+        <img className="gif" src="https://i.gifer.com/69SD.gif" alt="2pikachu_GIF" />
+        </section>
+        
+      </article>
     </>
   );
 };

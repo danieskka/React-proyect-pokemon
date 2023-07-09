@@ -3,7 +3,7 @@ import Card from './Card';
 const ListaPokemon = ({ pokeList }) => {
   return (
     <section className="lista-container">
-      <h2 className="lista-title">Lista de Pokemon</h2>
+      <h2 className="lista-title">List of Pokemon</h2>
       <div className="cards-container">
       {pokeList.map((pokemon, index) => (
         <Card

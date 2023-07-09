@@ -21,9 +21,9 @@ const handleChange = (e) => {
   
 return (
   <article className="search-container">
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="pokemon" placeholder="Busca un Pokemon" value={pokeName} onChange={handleChange} className="search-input"></input>
-      <button type="submit" className="button-78">Buscar</button>
+    <form onSubmit={handleSubmit} className="search-form">
+      <input type="text" name="pokemon" placeholder="Search Pokemon" value={pokeName} onChange={handleChange} className="search-input"></input>
+      <button type="submit" className="button-78">Search</button>
     </form>
   </article>
 )
