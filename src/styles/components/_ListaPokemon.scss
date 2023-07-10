@@ -1,0 +1,27 @@
+@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
+
+.lista-container {
+    text-align: center;
+    padding: 20px;
+    // width: 100%;
+}
+  
+.lista-title {
+    font-size: 44px;
+    margin-bottom: 20px;
+    font-family: $title-font;
+    color: goldenrod;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.pokemon-link {
+    text-decoration: none;
+}
+  
