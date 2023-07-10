@@ -53,11 +53,8 @@ const Pokedex = () => {
   return (
     <section>
       <Search handlePokemon={handlePokemon} />
-      {isSearching ? (
-        <div>
-          <Circle color="orange" size={100} />
-        </div>
-      ) : ( <ListaPokemon pokeList={pokeList} />
+      {isSearching ? ( <div> <Circle color="orange" size={100} /> </div>) 
+      : ( <ListaPokemon pokeList={pokeList} />
       
 )}
     </section>

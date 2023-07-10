@@ -13,7 +13,7 @@ function App() {
   return (
     <BrowserRouter>
         <Header />
-        <PokeListContext.Provider value={{ pokeList, setPokeList }}>
+        <PokeListContext.Provider value = {{ pokeList, setPokeList }}>
           <Main/>
         </PokeListContext.Provider>
         <Footer />
