@@ -3,16 +3,15 @@
 
 h1 {
     font-family: $title-font;
-    color: $light-orange;
-    font-size: 55px;
-    margin: 0 0;
-}
-
-main {
-    background-image: url('https://getwallpapers.com/wallpaper/full/7/4/3/87204.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    font-size: 60px;
+    color: #ffb703;
+    text-shadow: 2px 2px 4px #a8b820;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    background-color: #541a0f;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #f1c40f;
 }
 
 .home-container {
@@ -33,7 +32,7 @@ main {
 }
   
 .gif {
-    width: 450px;
+    // width: 450px;
     height: 300px;
     border-color: #f1c40f;
     border-width: 4px;

@@ -29,7 +29,7 @@ const Form = () => {
     <section className="form-container">
       
       <form onSubmit={handleSubmit(onSubmit)}>
-      <h3>Introduce a Pokemon</h3>
+      <h3>Sign up a Pokemon</h3>
         <article className="form-group">
           <label>Pokemon ID:</label>
           <input {...register('id', { required: true })} placeholder="Enter Pokemon ID" />

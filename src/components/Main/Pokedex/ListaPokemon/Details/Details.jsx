@@ -12,6 +12,8 @@ const Details = () => {
   const weight = params.get('weight');
   const height = params.get('height');
   const base_exp = params.get('base_exp');
+  const moves = params.get('moves');
+  const abilities = params.get('abilities');
   const typeOne = params.get('typeOne');
   const typeTwo = params.get('typeTwo');
 
@@ -22,15 +24,17 @@ const Details = () => {
   const heightMt = Math.round(height * 0.3048 * 100) / 100;
 
   return (
-    <article className="card">
-      <div className="card-image-container">
-        <img src={image} alt={name} className="card-image" />
+    <article className="details-card details-card-centered">
+      <div className="details-card-image-container">
+        <img src={image} alt={name} className="details-card-image" />
       </div>
-      <h3 className="card-title">{name}</h3>
-      <p>ID: {id}</p>
+      <h3 className="details-card-title">{name}</h3>
+      <p>ID: Nº{id}</p>
       <p>Weight: {weightKg} Kg</p>
       <p>Height: {heightMt} Meters</p>
-      <p>Base Experience: {base_exp}</p>
+      <p>Base Experience: {base_exp}xp</p>
+      <p>Moves: {moves}</p>
+      <p>Abilities: {abilities}</p>
       <p>TypeOne: {typeOne}</p>
       {typeTwo && <p>TypeTwo: {typeTwo}</p>}
     </article>
