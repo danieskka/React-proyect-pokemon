@@ -14,8 +14,8 @@ const ListaPokemon = () => {
         {pokeList.map((pokemon, index) => (
           <div key={index}>
             <Link
-              to={`/pokemon/${index + 1}?name=${pokemon.name}&image=${pokemon.img}&height=${pokemon.height}
-              &weight=${pokemon.weight}&typeOne=${pokemon.types[0]}&typeTwo=${pokemon.types[1] || ''}`}
+              to={`/pokemon/:?id=${pokemon.id}&name=${pokemon.name}&image=${pokemon.img}&height=${pokemon.height}
+              &weight=${pokemon.weight}&base_exp=${pokemon.base_experience}&typeOne=${pokemon.types[0]}&typeTwo=${pokemon.types[1] || ''}`}
               className="pokemon-link"
             >
               <Card
@@ -24,6 +24,9 @@ const ListaPokemon = () => {
                 height={pokemon.height}
                 types={pokemon.types}
                 weight={pokemon.weight}
+                id={pokemon.id}
+                base_experience={pokemon.base_experience}
+                moves={pokemon.moves}
               />
             </Link>
           </div>

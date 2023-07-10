@@ -11,6 +11,7 @@ const Details = () => {
   const image = params.get('image');
   const weight = params.get('weight');
   const height = params.get('height');
+  const base_exp = params.get('base_exp');
   const typeOne = params.get('typeOne');
   const typeTwo = params.get('typeTwo');
 
@@ -29,6 +30,7 @@ const Details = () => {
       <p>ID: {id}</p>
       <p>Weight: {weightKg} Kg</p>
       <p>Height: {heightMt} Meters</p>
+      <p>Base Experience: {base_exp}</p>
       <p>TypeOne: {typeOne}</p>
       {typeTwo && <p>TypeTwo: {typeTwo}</p>}
     </article>

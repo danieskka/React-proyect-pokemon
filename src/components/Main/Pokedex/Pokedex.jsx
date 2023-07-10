@@ -31,10 +31,15 @@ const Pokedex = () => {
 
           const name = data.name;
           const img = data.sprites.other.home.front_default;
+          
           const height = data.height;
           const types = data.types ? data.types.map((type) => type.type.name) : [];
           const weight = data.weight;
-          const addNewPokemon = { name, img, height, types, weight };
+          const id = data.id;
+          const base_experience = data.base_experience;
+          const moves = data.moves ? data.moves.map((move) => move.move.name) : [];
+
+          const addNewPokemon = { name, img, height, types, weight, id, base_experience, moves };
 
           setPokeList([...pokeList, addNewPokemon]);
           setIsSearching(false);
