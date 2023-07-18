@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import Card from './Card';
 import { PokeListContext } from '../../../../context/pokeListContext';
 
-const ListaPokemon = () => {
+const ListaPokemon = ({pokeList}) => {
   
-  const { pokeList } = useContext(PokeListContext);
+  // const { pokeList } = useContext(PokeListContext);
 
   return (
     <section className="lista-container">

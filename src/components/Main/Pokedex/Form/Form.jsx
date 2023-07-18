@@ -1,9 +1,12 @@
 import { useForm } from 'react-hook-form';
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 import FormCard from './FormCard/FormCard';
+import { PokeListContext } from '../../../../context/pokeListContext';
 
 const Form = () => {
+
+  const { pokeList, setPokeList } = useContext(PokeListContext);
 
   const [pokemonData, setPokemonData] = useState(null);
   const [showCard, setShowCard] = useState(false);
@@ -23,6 +26,7 @@ const Form = () => {
     };
     setPokemonData(pokemon);
     setShowCard(true);
+    setPokeList([...pokeList, pokemon]);
   };
 
   return (
